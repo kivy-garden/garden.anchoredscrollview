@@ -1,0 +1,71 @@
+#:import effects kivy.effects
+AnchoredScrollView:
+    header: _header
+
+    ScrollView:
+        FloatLayout:
+            size_hint_y: None
+            height: 2500
+            BoxLayout:
+                id: _header
+                orientation: 'vertical'
+                size_hint: 1, 0.15
+                pos_hint: {'top': 1.0}
+                anchor: _anchor
+                canvas:
+                    Color:
+                        rgba: 0.8, 0.6, 0.4, 1.0
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Label:
+                    text: "Header"
+                    font_size: 40
+                BoxLayout
+                    id: _anchor
+                    size_hint_y: 0.3
+                    canvas.before:
+                        Color:
+                            rgba: 0.3, 0.5, 0.8, 1.0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    Label:
+                        text: "Header Anchored widget"
+
+                    GoUpButton:
+                        on_press: root.scroll_to_header(animation={'duration': 0.4, 't': 'in_quad'})
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: 1, 0.85
+                padding: 4
+
+                Label:
+                    text: "Scrollable Content Begin"
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                MyButton:
+                BoxLayout
+                    Label:
+                        text: "Scrollable Content End"
+
+<MyButton@Button>:
+    text: "Content Item (%s)"%(self.uid)
+    background_color: (0.8, 0.8, 0.8,0.6)
+
+<GoUpButton@Button>:
+    text: "^"
+    font_size: 50
+    size_hint: None, None
+    size: 50, 50
