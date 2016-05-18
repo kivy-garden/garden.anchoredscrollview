@@ -20,7 +20,7 @@ AnchoredScrollView:
                 id: _header # The header widget. Target it with AnchoredScrollView.header
                 pos_hint: {'top': 1.0}
                 size_hint: 1, 0.1
-                anchor: _anchor
+                anchor: _anchor # The header needs an anchor widget
                 orientation: 'vertical'
                 Button:
                     text: "Header Content"
