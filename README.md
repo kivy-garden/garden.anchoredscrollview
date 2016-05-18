@@ -31,7 +31,7 @@ AnchoredScrollView:
                 text: "Content"
                 size_hint: 1, 0.9
 ```
-See examples.kv for other examples.
+See examples.kv (or run __init__.py) for other examples.
 
 
 ##Limitations:
